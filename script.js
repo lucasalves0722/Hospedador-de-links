@@ -1,21 +1,22 @@
+// script.js
+
 function toggleMode() {
-  const html = document.documentElement
-  html.classList.toggle("light")
+    const html = document.documentElement;
+    const img = document.getElementById('avatar-img');
 
-  //se isso if (html.classList.contains("light")) for verdade execute {
-  //  isso -> html.classList.remove("light")
-  // } mas, se isso não for verdade else faz {
-  //  isso -> html.classList.add("light")
-  // }
+    // Alterna a classe 'light' no elemento <html>
+    html.classList.toggle("light");
 
-  // pegar a tag img
-  const img = document.querySelector("#profile img")
-  // substituir a imagem
-  if (html.classList.contains("light")) {
-    //se tiver light mode, add a imagem light
-    img.setAttribute("src", "./assets/avatar-light.png")
-  } else {
-    //se tiver sem light mode, manter a imagem normal
-    img.setAttribute("src", "./assets/avata.png")
-  }
+    // Lógica para Trocar a Imagem do Perfil
+    if (html.classList.contains("light")) {
+        // Se estiver no MODO LIGHT:
+        // Assume que existe o arquivo 'avatar-light.png'
+        img.setAttribute("src", "./assets/avatar-light.png");
+        img.setAttribute("alt", "Foto de Lucas Alves sorrindo, usando óculos de sol, em modo light.");
+    } else {
+        // Se estiver no MODO DARK (retornando):
+        // Assume que o arquivo base é 'avatar.png' (Corrigindo o possível erro 'avata.png')
+        img.setAttribute("src", "./assets/avatar.png");
+        img.setAttribute("alt", "Foto de Lucas Alves sorrindo, usando óculos de sol, em modo dark.");
+    }
 }
